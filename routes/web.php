@@ -1,7 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
 
+Route::get('/about', function () {
+// We define the data here in the "Brain" of the app
+$skills = ['Laravel', 'PHP', 'Blade Templating', 'Golang', 'Soft Skills','CPP'];
+$is_available = true;
 
-Route::get('/profile', [UserController::class, 'index']);
+// Then we pass it to the view using the second argument
+return view('about', compact('skills', 'is_available'));
+});
