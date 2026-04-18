@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->text('description');
+            $table->string('short_title');
+            $table->integer('year')->nullable();
             // This creates the foreign key author_id
             $table->foreignId('author_id')->constrained()->onDelete('cascade');
             $table->timestamps();
